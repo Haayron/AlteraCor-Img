@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Atividade</title>
+</head>
+<style>
+    body {
+        color: white;
+        background-color: black;
+
+        display: flex;
+        flex-direction: column;
+        
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+    }
+
+    #cor-de-fundo{
+        padding: 3rem;
+        border: 2px solid white;
+        margin-top: 5rem;
+    }
+
+    #container-imagem{
+        padding: 3rem;
+        border: 2px solid white;
+        margin-top: 5rem;
+    }
+
+    input{
+        cursor: pointer;
+    }
+
+    img{
+        max-width: 200px;
+        max-height: 200px;
+        border-radius: 5px;
+    }
+</style>
+
+<body>
+    <!--
+        Fazer uma página com um formulário e uma imagem de sua escolha que também serve como link (o link deve referenciar a própria imagem). O formulário tem dois campos de entrada de texto: o primeiro mostra o valor atual da cor de fundo da página e o segundo mostra a url da imagem sendo exibida na página. A seleção do botão "Atualiza" deve fazer com que a cor de fundo da página, imagem e o seu link sejam modificados conforme o valor dos campos do formulário. Exemplo:
+    -->
+
+    <div class="container">
+
+
+        <div id="cor-de-fundo">
+            <h1>Mudar cor</h1>
+            
+            <input type="text" id="cor-input">
+            <input type="submit" onclick="mudarCor()">
+        </div>
+        
+        <div id="container-imagem">
+            <h1>Buscar imagem</h1>  
+            
+            <input type="url" id="img-url">
+            <input type="submit" onclick="buscarImagem()">    
+            <br><br>
+            <img id="imagem-aqui">                  
+        </div>
+
+
+
+    </div>
+
+    <script>
+
+        function mudarCor() {
+            document.getElementById("cor-de-fundo").style.backgroundColor = document.getElementById("cor-input").value;
+        }
+
+
+        function buscarImagem(){
+            document.getElementById("imagem-aqui").src = document.getElementById("img-url").value; 
+        }
+
+
+    </script>
+
+</body>
+
+</html>
